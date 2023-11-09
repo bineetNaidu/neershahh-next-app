@@ -2,11 +2,11 @@ import type { FC } from 'react';
 
 export const UploadMemories: FC = () => {
   return (
-    <div className="flex flex-col items-center my-20">
+    <div className="flex flex-col items-center my-20 text-center">
       <h1 className="uppercase text-gray-400 font-semibold tracking-wider">
         SAY CHEESE AND SHARE THE LOVE
       </h1>
-      <h2 className="text-6xl font-[Sacramento] my-8 font-semibold text-pink-500">
+      <h2 className="text-4xl md:text-5xl lg:text-6x font-[Sacramento] my-8 font-semibold text-pink-500">
         Picture Perfect Moments
       </h2>
 

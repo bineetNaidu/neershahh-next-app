@@ -13,7 +13,7 @@ export const WeddingInfo: FC = () => {
         </h3>
         <p>We invited you to celebrate our wedding</p>
       </div>
-      <div className="flex container gap-2 w-3/4">
+      <div className="flex flex-col md:flex-row container gap-y-10 md:gap-2 lg:w-3/4 transition-all">
         <div className="flex items-center gap-4">
           <div className="text-right">
             <h2 className="text-pink-500 font-[Sacramento] text-4xl mb-4 font-semibold">

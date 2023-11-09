@@ -11,7 +11,7 @@ export default function Home() {
 
         <article className="w-full min-h-screen h-full flex justify-center items-center">
           <div className="flex flex-col items-center text-white z-10">
-            <h1 className="text-[100px] font-[Sacramento]">
+            <h1 className="lg:text-[100px] md:text-[80px] text-[60px] font-[Sacramento] transition-all">
               Jainam &amp; Sonal
             </h1>
             <h2 className="text-lg">We are Getting Married</h2>
@@ -31,8 +31,8 @@ export default function Home() {
 
       <hr className="w-11/12 mx-auto mb-10 border-dashed border-2" />
 
-      <div className="flex flex-col items-center my-20 w-10/12 mx-auto bg-gray-100 p-10 rounded-lg">
-        <h1 className="text-6xl font-[Sacramento] my-8 font-semibold text-pink-500">
+      <div className="flex flex-col items-center my-20 w-full md:w-10/12 mx-auto bg-gray-100 p-10 rounded-lg text-center">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-[Sacramento] my-8 font-semibold text-pink-500">
           Pre-Wedding Shoot
         </h1>
         <p>
@@ -40,7 +40,7 @@ export default function Home() {
           motion!.
         </p>
 
-        <div className="flex gap-4 my-10">
+        <div className="flex flex-col md:flex-row gap-4 my-10">
           <div className="flex-1">
             <h3 className="text-xl font-medium mb-2">TWO HEARTS, ONE STORY</h3>
             <p>
