@@ -5,7 +5,7 @@ export const WeddingEvents: FC = () => {
     <div className='bg-[url("/images/img_bg_3.jpg")] min-w-full min-h-screen h-full bg-no-repeat relative bg-cover bg-center overflow-hidden bg-fixed transition-all py-10'>
       <div className="absolute top-0 right-0 left-0 bottom-0 bg-black opacity-50"></div>
 
-      <article className="min-h-screen h-full flex justify-center items-center">
+      <article className="min-h-screen h-full flex justify-center items-center px-2">
         <div className="flex flex-col items-center text-white z-10">
           <h1 className="uppercase text-gray-400 font-bold tracking-wider">
             Our Special Events
