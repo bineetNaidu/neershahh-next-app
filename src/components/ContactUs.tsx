@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 import { Input } from '@/components/ui/input';
 import { Button } from './ui/button';
+import { Footer } from './Footer';
 
 export const ContactUs: FC = () => {
   return (
@@ -35,6 +36,8 @@ export const ContactUs: FC = () => {
           </div>
         </div>
       </article>
+
+      <Footer />
     </div>
   );
 };
