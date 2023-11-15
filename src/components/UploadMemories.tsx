@@ -2,7 +2,10 @@ import type { FC } from 'react';
 
 export const UploadMemories: FC = () => {
   return (
-    <div className="flex flex-col items-center my-20 text-center mx-2">
+    <div
+      className="flex flex-col items-center my-20 text-center mx-2"
+      id="upload_sec"
+    >
       <h1 className="uppercase text-gray-400 font-semibold tracking-wider">
         SAY CHEESE AND SHARE THE LOVE
       </h1>
