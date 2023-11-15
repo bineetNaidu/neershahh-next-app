@@ -14,8 +14,8 @@ export const WeddingInfo: FC = () => {
         <p>We invited you to celebrate our wedding</p>
       </div>
       <div className="flex flex-col md:flex-row container gap-y-10 md:gap-2 lg:w-3/4 transition-all">
-        <div className="flex items-center gap-4">
-          <div className="text-right">
+        <div className="flex flex-col-reverse sm:flex-row items-center gap-4">
+          <div className="text-center sm:text-right">
             <h2 className="text-pink-500 font-[Sacramento] text-4xl mb-4 font-semibold">
               Jainam Jain
             </h2>
@@ -35,7 +35,7 @@ export const WeddingInfo: FC = () => {
             />
           </div>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex flex-col sm:flex-row items-center gap-4">
           <div className="min-w-fit">
             <Image
               alt="AVATAR"
@@ -45,7 +45,7 @@ export const WeddingInfo: FC = () => {
               className="rounded-full"
             />
           </div>
-          <div className="text-left">
+          <div className="text-center sm:text-left">
             <h2 className="text-pink-500 font-[Sacramento] text-4xl mb-4 font-semibold">
               Sonal Jain
             </h2>

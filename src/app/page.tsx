@@ -11,7 +11,7 @@ export default function Home() {
 
         <article className="w-full min-h-screen h-full flex justify-center items-center">
           <div className="flex flex-col items-center text-white z-10">
-            <h1 className="lg:text-[100px] md:text-[80px] text-[60px] font-[Sacramento] transition-all">
+            <h1 className="lg:text-[100px] md:text-[80px] text-[50px] font-[Sacramento] transition-all">
               Jainam &amp; Sonal
             </h1>
             <h2 className="text-lg">We are Getting Married</h2>
