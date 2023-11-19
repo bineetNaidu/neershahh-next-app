@@ -99,7 +99,7 @@ export const UploadMemories: FC = () => {
               )}
             </div>
           </div>
-          <DialogFooter className="sm:justify-start">
+          <DialogFooter className="sm:justify-start gap-2">
             <DialogClose asChild>
               <Button type="button" variant="secondary">
                 Close
