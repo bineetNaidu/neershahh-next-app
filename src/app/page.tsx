@@ -1,4 +1,5 @@
 import { ContactUs } from '@/components/ContactUs';
+import { PreWedding } from '@/components/PreWedding';
 import { UploadMemories } from '@/components/UploadMemories';
 import { WeddingEvents } from '@/components/WeddingEvents';
 import { WeddingInfo } from '@/components/WeddingInfo';
@@ -29,35 +30,7 @@ export default function Home() {
 
       <hr className="w-11/12 mx-auto mb-10 border-dashed border-2" />
 
-      <div className="flex flex-col items-center my-20 w-full md:w-10/12 mx-auto bg-gray-100 p-10 rounded-lg text-center">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-[Sacramento] my-8 font-semibold text-pink-500">
-          Pre-Wedding Shoot
-        </h1>
-        <p>
-          From laughs to love, our pre-wedding adventure is a rom-com in
-          motion!.
-        </p>
-
-        <div className="flex flex-col md:flex-row gap-4 my-10">
-          <div className="flex-1">
-            <h3 className="text-xl font-medium mb-2">TWO HEARTS, ONE STORY</h3>
-            <p>
-              Join the soon-to-be newlyweds on a rollercoaster of love,
-              laughter, and adorable antics as they embark on their pre-wedding
-              escapade. This video is proof that even before they say &apos;I
-              do,&apos; they&apos;ve already mastered the art of &apos;We
-              do&apos;! From sweet stolen glances to some not-so-graceful dance
-              moves, this pre-wedding shoot captures their love story in all its
-              candid, quirky glory. Get ready for a heartwarming dose of
-              romance, sprinkled with just the right amount of sarcasm to keep
-              you smiling. After all, who said love can&apos;t be sweet, funny,
-              and a little sarcastic all at once? Click play and prepare to be
-              thoroughly entertained!
-            </p>
-          </div>
-          <div className='flex-1 bg-[url("/images/img_bg_2.jpg")] transition-all w-full rounded-lg m-8'></div>
-        </div>
-      </div>
+      <PreWedding />
 
       <ContactUs />
     </main>
