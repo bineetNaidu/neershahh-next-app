@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 export const WeddingEvents: FC = () => {
   return (
-    <div className='bg-[url("/images/img_bg_3.jpg")] min-w-full min-h-screen h-full bg-no-repeat relative bg-cover bg-center overflow-hidden bg-fixed transition-all py-10'>
+    <div className='bg-[url("/images/bg-banner-3.JPG")] min-w-full min-h-screen h-full bg-no-repeat relative bg-cover bg-center overflow-hidden bg-fixed transition-all py-10'>
       <div className="absolute top-0 right-0 left-0 bottom-0 bg-black opacity-50"></div>
 
       <article className="min-h-screen h-full flex justify-center items-center">
@@ -14,7 +14,7 @@ export const WeddingEvents: FC = () => {
             Wedding Events
           </h2>
           <div className="flex flex-col md:flex-row container gap-5 my-10  transition-all">
-            <div className="border p-10 rounded text-center flex flex-col w-11/12 sm:w-[400px] mx-auto">
+            <div className="border p-10 rounded text-center flex flex-col w-11/12 sm:w-[400px] mx-auto bg-black bg-opacity-50">
               <p className="font-bold">28 NOV 23</p>
               <hr className="my-4" />
               <p className="text-pink-500 mb-2 font-semibold">DAY 1</p>
@@ -26,7 +26,7 @@ export const WeddingEvents: FC = () => {
                 <p>10:00 - DJ Night</p>
               </div>
             </div>
-            <div className="border p-10 rounded text-center flex flex-col w-11/12 sm:w-[400px] mx-auto">
+            <div className="border p-10 rounded text-center flex flex-col w-11/12 sm:w-[400px] mx-auto bg-black bg-opacity-50">
               <p className="font-bold">29 NOV 23</p>
               <hr className="my-4" />
               <p className="text-pink-500 mb-2 font-semibold">DAY 2</p>

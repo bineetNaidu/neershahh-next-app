@@ -26,7 +26,7 @@ export const WeddingInfo: FC = () => {
               src="/images/groom.jpg"
               width={150}
               height={150}
-              className="rounded-full"
+              className="rounded-full w-[150px] h-[150px] bg-center bg-cover"
             />
           </div>
         </div>
@@ -37,7 +37,7 @@ export const WeddingInfo: FC = () => {
               src="/images/bride.jpg"
               width={150}
               height={150}
-              className="rounded-full"
+              className="rounded-full w-[150px] h-[150px] bg-center bg-cover"
             />
           </div>
           <div className="text-center sm:text-left">
