@@ -24,9 +24,14 @@ export const AuthOverlay = () => {
   }, [toast]);
 
   return (
-    <div className="absolute top-0 right-0 left-0 bottom-0 bg-black opacity-80">
-      <div className="w-full h-full grid place-content-center z-100000">
-        <Button variant="secondary" onClick={handleAuth}>
+    <div className="transition-all">
+      <div className="absolute top-0 right-0 left-0 bottom-0 bg-black opacity-95 blur touch-none"></div>
+      <div className="w-full h-full z-10">
+        <Button
+          variant="secondary"
+          onClick={handleAuth}
+          className="absolute left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%]"
+        >
           <FcGoogle className="mr-2" />
           Sign in with Google
         </Button>
