@@ -13,17 +13,12 @@ export const WeddingInfo: FC = () => {
         </h3>
         <p>We invited you to celebrate our wedding</p>
       </div>
-      <div className="flex flex-col md:flex-row container gap-y-10 md:gap-2 lg:w-3/4 transition-all">
+      <div className="flex flex-col md:flex-row container gap-y-10 md:gap-2 lg:w-3/4 transition-all justify-center items-center">
         <div className="flex flex-col-reverse sm:flex-row items-center gap-4">
           <div className="text-center sm:text-right">
             <h2 className="text-pink-500 font-[Sacramento] text-4xl mb-4 font-semibold">
               Jainam Jain
             </h2>
-            <p className="text-gray-400">
-              Far far away, behind the word mountains, far from the countries
-              Vokalia and Consonantia, there live the blind texts. Separated
-              they live in Bookmarksgrove
-            </p>
           </div>
           <div className="min-w-fit">
             <Image
@@ -49,11 +44,6 @@ export const WeddingInfo: FC = () => {
             <h2 className="text-pink-500 font-[Sacramento] text-4xl mb-4 font-semibold">
               Sonal Jain
             </h2>
-            <p className="text-gray-400">
-              Far far away, behind the word mountains, far from the countries
-              Vokalia and Consonantia, there live the blind texts. Separated
-              they live in Bookmarksgrove
-            </p>
           </div>
         </div>
       </div>
