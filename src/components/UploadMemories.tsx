@@ -63,7 +63,8 @@ export const UploadMemories: FC = () => {
       </h2>
       <p>
         Share your memories - Upload your funniest, loveliest, and most
-        &aspos;frame-worthy&aspos; moments with us.
+        &apos;frame-worthy&apos; moments with us. And get a chance to win
+        exclusive prizes
       </p>
       <Dialog onOpenChange={handleModeReset}>
         <DialogTrigger asChild>
