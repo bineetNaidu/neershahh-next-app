@@ -41,7 +41,6 @@ export const UploadMemories: FC = () => {
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((loggedInUser) => {
       if (loggedInUser) {
-        console.log(loggedInUser);
         setUser(loggedInUser);
       } else {
         setUser(null);
@@ -63,8 +62,8 @@ export const UploadMemories: FC = () => {
         Picture Perfect Moments
       </h2>
       <p>
-        Upload your funniest, loveliest, and most &rsquo;frame-worthy&rsquo;
-        moments with us
+        Share your memories - Upload your funniest, loveliest, and most
+        &aspos;frame-worthy&aspos; moments with us.
       </p>
       <Dialog onOpenChange={handleModeReset}>
         <DialogTrigger asChild>
@@ -76,7 +75,9 @@ export const UploadMemories: FC = () => {
           <DialogHeader>
             <DialogTitle>Upload Memories</DialogTitle>
             <DialogDescription>
-              Share your favarite moments and memories from the event.
+              Share your favarite moments and memories from the event. And share
+              your beautiful wedding selfie and <b>Five lucky winners</b> will
+              stand a chance to win a <b>personalized colour edited frame</b>.
             </DialogDescription>
           </DialogHeader>
           <div className="flex items-center space-x-2">

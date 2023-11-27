@@ -9,9 +9,9 @@ export const WeddingInfo: FC = () => {
           Hello!
         </h2>
         <h3 className="text-black text-xl mb-4 tracking-wide">
-          November 29th, 2023 , India
+          November 29th, 2023
         </h3>
-        <p>We invited you to celebrate our wedding</p>
+        <p>We invite you to celebrate our wedding</p>
       </div>
       <div className="flex flex-col md:flex-row container gap-y-10 md:gap-2 lg:w-3/4 transition-all justify-center items-center">
         <div className="flex flex-col-reverse sm:flex-row items-center gap-4">
@@ -42,7 +42,7 @@ export const WeddingInfo: FC = () => {
           </div>
           <div className="text-center sm:text-left">
             <h2 className="text-pink-500 font-[Sacramento] text-4xl mb-4 font-semibold">
-              Sonal Jain
+              Sonal Oswal
             </h2>
           </div>
         </div>

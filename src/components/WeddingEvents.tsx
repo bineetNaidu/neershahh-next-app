@@ -19,8 +19,8 @@ export const WeddingEvents: FC = () => {
               <hr className="my-4" />
               <p className="text-pink-500 mb-2 font-semibold">DAY 1</p>
               <div className="text-gray-300">
-                <p>12:30 - Dasturi</p>
-                <p>1:00 - Mayera sambela</p>
+                <p>11:30 - Dasturi</p>
+                <p>12:30 - Mayera sambela</p>
                 <p>3:00 - Phoolon ki Holi</p>
                 <p>7:00 - Sangeet</p>
                 <p>10:00 - DJ Night</p>

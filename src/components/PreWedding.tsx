@@ -7,7 +7,6 @@ export const PreWedding: FC = () => {
   const [countdownStatus, setCountdownStatus] = useState<'running' | 'over'>(
     'running'
   );
-  const weddingTime = useRef(new Date('2023-11-29T20:00:00'));
 
   const renderer: CountdownRendererFn = ({
     hours,
@@ -40,11 +39,11 @@ export const PreWedding: FC = () => {
         Pre-Wedding Shoot
       </h1>
       <p>
-        From laughs to love, our pre-wedding adventure is a rom-com in motion!.
+        From laughs to love, our pre-wedding adventure is a rom-com in motion!
       </p>
 
       <div className="my-10 flex justify-center items-center relative">
-        <Countdown date={weddingTime.current} renderer={renderer} />
+        <Countdown date={'2023-11-29T20:00:00'} renderer={renderer} />
 
         <iframe
           className={`w-[280px] sm:w-[420px] md:w-[550px] h-[250px] pointer-events-none rounded-md ${
