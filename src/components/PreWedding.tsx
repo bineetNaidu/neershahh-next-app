@@ -43,7 +43,7 @@ export const PreWedding: FC = () => {
       </p>
 
       <div className="my-10 flex justify-center items-center relative">
-        <Countdown date={'2023-11-29T20:00:00'} renderer={renderer} />
+        <Countdown date={'2023-11-28T20:00:00'} renderer={renderer} />
 
         <iframe
           className={`w-[280px] sm:w-[420px] md:w-[550px] h-[250px] pointer-events-none rounded-md ${
