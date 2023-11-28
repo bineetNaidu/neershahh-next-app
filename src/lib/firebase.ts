@@ -36,7 +36,6 @@ export const handleContactMeForm = async (data: {
   const r = collection(db, 'contact_us_reponses');
 
   const d = await addDoc(r, data);
-  console.log('addded');
   return d.id;
 };
 

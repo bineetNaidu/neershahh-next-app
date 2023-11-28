@@ -35,8 +35,6 @@ export const ContactUs: FC = () => {
     async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
       if (!!name && !!email) {
-        console.log('log');
-
         const r = await handleContactMeForm({ name, email });
         if (r) {
           resetState();
