@@ -1,6 +1,6 @@
 'use client';
 
-import { FC, useState, useCallback, useEffect } from 'react';
+import React, { FC, useState, useCallback, useEffect } from 'react';
 import {
   Dialog,
   DialogClose,
@@ -15,9 +15,14 @@ import { Button } from './ui/button';
 import { IoMdArrowRoundBack } from 'react-icons/io';
 import { Uploader } from './Uploader';
 import { AuthOverlay } from './AuthOverlay';
-import { auth } from '@/lib/firebase';
+import {
+  auth,
+  checkAuthUserHasPhoneNumber,
+  handleAddPhoneNumber,
+} from '@/lib/firebase';
 import { User, signOut } from 'firebase/auth';
 import { Toaster } from '@/components/ui/toaster';
+import { Input } from './ui/input';
 
 export const UploadMemories: FC = () => {
   const [uploadMode, setUploadMode] = useState<
@@ -37,11 +42,35 @@ export const UploadMemories: FC = () => {
   }, []);
 
   const [user, setUser] = useState<User | null>(null);
+  const [hasPhnNum, setHasPhnNum] = useState(false);
+  const [phnNum, setPhnNum] = useState('');
+
+  const handlePhnNumInputChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      setPhnNum(e.target.value);
+    },
+    []
+  );
+
+  const handleAddPhoneNumClick = useCallback(async () => {
+    if (!user) return;
+    if (!phnNum) return;
+
+    try {
+      await handleAddPhoneNumber(user.uid, phnNum);
+      setHasPhnNum(true);
+    } catch (e) {
+      console.log(e);
+      setHasPhnNum(false);
+    }
+  }, [user, phnNum]);
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((loggedInUser) => {
+    const unsubscribe = auth.onAuthStateChanged(async (loggedInUser) => {
       if (loggedInUser) {
         setUser(loggedInUser);
+        const r = await checkAuthUserHasPhoneNumber(loggedInUser.uid);
+        r ? setHasPhnNum(true) : setHasPhnNum(false);
       } else {
         setUser(null);
       }
@@ -84,7 +113,32 @@ export const UploadMemories: FC = () => {
           <div className="flex items-center space-x-2">
             <div className="grid flex-1 gap-2 relative p-4">
               {!user && <AuthOverlay />}
-              {!uploadMode && (
+
+              {!hasPhnNum && !!user && (
+                <div>
+                  <h1 className="text-xs mb-2">
+                    Please Add your phone number, so that we can contact you if
+                    you win any prizes.
+                  </h1>
+                  <div className="flex flex-col gap-3">
+                    <Input
+                      required
+                      value={phnNum}
+                      onChange={handlePhnNumInputChange}
+                      placeholder="+91"
+                      className="bg-transparent placeholder:text-gray-400"
+                    />
+                    <Button
+                      className="text-xs"
+                      onClick={handleAddPhoneNumClick}
+                    >
+                      Add Phone Number
+                    </Button>
+                  </div>
+                </div>
+              )}
+
+              {hasPhnNum && !uploadMode && (
                 <>
                   <Button onClick={handleMomentsBtnClick}>
                     Your best moments!
@@ -96,7 +150,7 @@ export const UploadMemories: FC = () => {
                 </>
               )}
 
-              {!!uploadMode && !!user && (
+              {!!uploadMode && !!user && hasPhnNum && (
                 <Uploader mode={uploadMode} auth={user} />
               )}
             </div>

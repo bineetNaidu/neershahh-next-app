@@ -8,6 +8,7 @@ import {
   getDoc,
   getFirestore,
   setDoc,
+  updateDoc,
 } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 
@@ -37,6 +38,25 @@ export const handleContactMeForm = async (data: {
 
   const d = await addDoc(r, data);
   return d.id;
+};
+
+export const checkAuthUserHasPhoneNumber = async (uid: string) => {
+  const docSnap = await getDoc(doc(db, 'users', uid));
+
+  if (docSnap.exists()) {
+    return !!docSnap.get('phone_number');
+  } else {
+    return false;
+  }
+};
+
+export const handleAddPhoneNumber = async (
+  uid: string,
+  phone_number: string
+) => {
+  const ref = doc(db, 'users', uid);
+
+  await updateDoc(ref, { phone_number });
 };
 
 type NewUserData = {
