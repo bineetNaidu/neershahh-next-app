@@ -4,15 +4,32 @@ import React, { useCallback } from 'react';
 import { Button } from './ui/button';
 import { FcGoogle } from 'react-icons/fc';
 import { signInWithPopup } from 'firebase/auth';
-import { GoogleProvider, auth } from '@/lib/firebase';
+import { GoogleProvider, auth, handleAddNewUser } from '@/lib/firebase';
 import { useToast } from './ui/use-toast';
 import { ToastAction } from './ui/toast';
+import { Input } from './ui/input';
 
 export const AuthOverlay = () => {
   const { toast } = useToast();
   const handleAuth = useCallback(async () => {
     try {
-      await signInWithPopup(auth, GoogleProvider);
+      const user = await signInWithPopup(auth, GoogleProvider);
+
+      const res = await handleAddNewUser({
+        avatar: user.user.photoURL!,
+        email: user.user.email!,
+        name: user.user.displayName!,
+        uid: user.user.uid,
+        phone_number: user.user.phoneNumber,
+      });
+
+      if (res) {
+        toast({
+          title: 'Logged in successfully',
+        });
+      } else {
+        throw new Error('Something went wrong!');
+      }
     } catch (error) {
       toast({
         variant: 'destructive',
