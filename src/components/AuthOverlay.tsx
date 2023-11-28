@@ -43,7 +43,7 @@ export const AuthOverlay = () => {
   return (
     <div className="transition-all">
       <div className="absolute top-0 right-0 left-0 bottom-0 bg-black opacity-95 blur touch-none"></div>
-      <div className="w-full h-full z-10">
+      <div className="w-full h-full z-10 py-10">
         <Button
           variant="secondary"
           onClick={handleAuth}
