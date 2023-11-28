@@ -5,7 +5,7 @@ import { useDropzone } from 'react-dropzone';
 import { Button } from './ui/button';
 import { IoCloudUploadSharp } from 'react-icons/io5';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
-import { db, storage } from '@/lib/firebase';
+import { handleUploadPhotoDoc, storage } from '@/lib/firebase';
 import { FiLoader } from 'react-icons/fi';
 import { Progress } from './ui/progress';
 import { useToast } from './ui/use-toast';
@@ -132,10 +132,20 @@ export const Uploader: FC<Props> = ({ auth, mode }) => {
             // For instance, get the download URL: https://firebasestorage.googleapis.com/...
             await getDownloadURL(uploadTask.snapshot.ref).then(
               async (downloadURL) => {
+                await handleUploadPhotoDoc(auth.uid, {
+                  download_url: downloadURL,
+                  name: f.name,
+                  size: f.size,
+                  subject: mode,
+                });
                 toast({
                   title: 'Uploaded successfully',
                   description: (
-                    <a href={downloadURL} target="_blank">
+                    <a
+                      href={downloadURL}
+                      target="_blank"
+                      className="text-blue-500"
+                    >
                       preview
                     </a>
                   ),
@@ -152,7 +162,7 @@ export const Uploader: FC<Props> = ({ auth, mode }) => {
         );
       });
     }
-  }, [acceptedFiles, auth.uid, toast]);
+  }, [acceptedFiles, auth.uid, mode, toast]);
 
   return (
     <section className="container">

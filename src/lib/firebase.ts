@@ -30,6 +30,28 @@ export const storage = getStorage(firebase_app);
 
 export const db = getFirestore(firebase_app);
 
+type Photo = {
+  name: string;
+  size: number;
+  download_url: string;
+  subject: string;
+};
+
+export const handleUploadPhotoDoc = async (uid: string, data: Photo) => {
+  const userDoc = doc(db, 'users', uid);
+  const uploadsRef = collection(db, 'uploads');
+
+  try {
+    await addDoc(uploadsRef, {
+      ...data,
+      author: userDoc,
+    });
+  } catch (e) {
+    console.log(e);
+    throw e;
+  }
+};
+
 export const handleContactMeForm = async (data: {
   name: string;
   email: string;
