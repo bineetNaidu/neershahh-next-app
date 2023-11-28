@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp, getApps } from 'firebase/app';
 import { GoogleAuthProvider, getAuth } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';
+import { addDoc, collection, getFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 
 const firebaseConfig = {
@@ -21,6 +21,17 @@ let firebase_app =
 export const storage = getStorage(firebase_app);
 
 export const db = getFirestore(firebase_app);
+
+export const handleContactMeForm = async (data: {
+  name: string;
+  email: string;
+}) => {
+  const r = collection(db, 'contact_us_reponses');
+
+  const d = await addDoc(r, data);
+  console.log('addded');
+  return d.id;
+};
 
 export const GoogleProvider = new GoogleAuthProvider();
 
