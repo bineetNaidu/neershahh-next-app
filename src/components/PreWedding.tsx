@@ -45,12 +45,15 @@ export const PreWedding: FC = () => {
       <div className="my-10 flex justify-center items-center relative">
         <Countdown date={'2023-11-28T20:00:00'} renderer={renderer} />
 
-        <iframe
+        <p className="text-center text-md md:text-xl italic">
+          We will upload the video soon!
+        </p>
+        {/* <iframe
           className={`w-[280px] sm:w-[420px] md:w-[550px] h-[250px] pointer-events-none rounded-md ${
             countdownStatus === 'over' ? '' : 'blur-lg'
           }`}
           src="https://www.youtube.com/embed/tgbNymZ7vqY"
-        ></iframe>
+        ></iframe> */}
       </div>
     </div>
   );
